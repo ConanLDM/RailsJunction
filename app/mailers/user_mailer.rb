@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email
     @user = params[:user]
-    @url  = 'http://example.com/login'
+    @url  = 'tbc'
     mail(to: @user.email, subject: 'Welcome to Rails Junction')
   end
 end
