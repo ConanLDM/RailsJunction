@@ -23,7 +23,6 @@ jobs:
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2.2'
           bundler-cache: true
       - name: Set up database schema
         run: bin/rails db:schema:load
@@ -38,7 +37,6 @@ jobs:
       - name: Install Ruby and gems
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2.2'
           bundler-cache: true
       - name: Security audit dependencies
         run: bin/bundler-audit --update
