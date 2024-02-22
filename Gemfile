@@ -27,7 +27,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -44,8 +44,15 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-# Initially for backgrouind user jobs
-gem "sidekiq"
+# Initially for background user jobs, less than version 7 for now to maintain Redis compatibility
+gem "sidekiq", "6.5.12"
+
+
+# For keeping track of failing jobs
+gem 'sidekiq-failures'
+
+# For the development environment with Sidekiq
+gem "foreman"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

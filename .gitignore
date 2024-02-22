@@ -33,3 +33,24 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore database configuration
+config/database.yml
+
+# Ignore Sidekiq-related files
+config/sidekiq.yml
+bin/sidekiq
+bin/sidekiqmon
+
+# Ignore Redis dump file
+dump.rdb
+
+# Ignore any other environment-specific files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore custom SQL commands
+init.sql
