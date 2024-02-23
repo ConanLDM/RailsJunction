@@ -54,6 +54,11 @@ gem 'sidekiq-failures'
 # For the development environment with Sidekiq
 gem "foreman"
 
+
+
+# For checking existing gem versions and for vulnerabilities
+gem 'bundler-audit'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
