@@ -12,3 +12,6 @@ User.create!(
   name: "John Smith",
   email: "john.smith@example.com"
 )
+
+City.create(name: 'Metropolis', population: 100000)
+City.last.junctions.create(name: 'Central Square', location: 'Downtown')
