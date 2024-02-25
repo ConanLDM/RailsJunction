@@ -1,1 +1,11 @@
 <h1>Homepage</h1>
+
+<h1><%= @city.name %></h1>
+<p>Population: <%= @city.population %></p>
+
+<h2>Junctions:</h2>
+<ul>
+  <% @city.junctions.each do |junction| %>
+    <li><%= junction.name %> (Located in: <%= junction.location %>)</li>
+  <% end %>
+</ul>
