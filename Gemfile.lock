@@ -105,6 +105,7 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    ffaker (2.23.0)
     foreman (0.87.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -267,6 +268,7 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
+  ffaker
   foreman
   importmap-rails
   jbuilder

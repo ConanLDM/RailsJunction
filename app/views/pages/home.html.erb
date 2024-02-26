@@ -1,11 +1,11 @@
 <h1>Homepage</h1>
 
-<h1><%= @city.name %></h1>
-<p>Population: <%= @city.population %></p>
+<h1>Random City</h1>
+<% random_city = City.all.sample %>
 
-<h2>Junctions:</h2>
-<ul>
-  <% @city.junctions.each do |junction| %>
-    <li><%= junction.name %> (Located in: <%= junction.location %>)</li>
-  <% end %>
-</ul>
+<% if random_city %>
+  <p>Name: <%= random_city.name %></p>
+  <p>Population: <%= random_city.population %></p>
+<% else %>
+  <p>No cities found.</p>
+<% end %>
