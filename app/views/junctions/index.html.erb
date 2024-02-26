@@ -1,0 +1,6 @@
+<h2>Junctions:</h2>
+<ul>
+  <% @city.junctions.each do |junction| %>
+    <li><%= junction.name %> (Located in: <%= junction.location %>)</li>
+  <% end %>
+</ul>

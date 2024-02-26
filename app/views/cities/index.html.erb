@@ -1,0 +1,17 @@
+<h1>Cities with Junctions</h1>
+<ul>
+  <% @cities.each do |city| %>
+    <li><%= city.name %></li>
+    <% if city.has_junctions? %>
+       <ul>
+        <% city.junctions.each do |junction| %>
+          <li>Junction: <%= junction.name %></li>
+          <!-- Add more details about the junction if needed -->
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</ul>
+
+<h1><%= @city.name %></h1>
+<p>Population: <%= @city.population %></p>

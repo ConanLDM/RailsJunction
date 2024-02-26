@@ -8,10 +8,31 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require 'ffaker'
+
+City.destroy_all
+User.destroy_all
+
 User.create!(
   name: "John Smith",
   email: "john.smith@example.com"
 )
 
-City.create(name: 'Metropolis', population: 100000)
-City.last.junctions.create(name: 'Central Square', location: 'Downtown')
+10.times do |i|
+  city = City.create(name: FFaker::Address.city, population: rand(1000..1_000_000))
+  if city.persisted?
+    puts "City #{i + 1}: #{city.name} created successfully!"
+  else
+    puts "City #{i + 1}: Error creating city - #{city.errors.full_messages.join(', ')}"
+  end
+end
+
+Junction.create(name: 'Central Square', location: 'Downtown')
+
+last_city = City.last
+if last_city
+  last_city.junctions.create(name: 'Central Square', location: 'Downtown')
+  puts "Junction created successfully for the last city: #{last_city.name}"
+else
+  puts "No cities found. Please create some cities first."
+end
