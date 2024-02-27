@@ -3,6 +3,10 @@ class JunctionsController < ApplicationController
     @junction = Junction.new(junction_params)
   end
 
+  def index
+    
+  end
+
   private
 
   def junction_params

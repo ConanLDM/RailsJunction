@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :cities do
     resources :junctions
   end
+
+  resources :junctions
 end
