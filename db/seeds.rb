@@ -12,6 +12,7 @@ require 'ffaker'
 
 City.destroy_all
 User.destroy_all
+Junction.destroy_all
 
 User.create!(
   name: "John Smith",
@@ -27,12 +28,28 @@ User.create!(
   end
 end
 
-Junction.create(name: 'Central Square', location: 'Downtown')
-
 last_city = City.last
+
 if last_city
-  last_city.junctions.create(name: 'Central Square', location: 'Downtown')
-  puts "Junction created successfully for the last city: #{last_city.name}"
+  junctions_data = [
+    { name: 'Central Square', location: 'Downtown' },
+    { name: "Spaghetti Junction", location: "Birmingham" },
+    { name: "Shibuya Crossing", location: "Tokyo" },
+    { name: "Arc de Triomphe Roundabout", location: "Paris" },
+    { name: "Magic Roundabout", location: "Swindon" },
+    { name: "Times Square Intersection", location: "New York location" },
+    { name: "Akihabara Crossing", location: "Tokyo" }
+  ]
+
+  junctions_data.each do |junction_data|
+    junction = last_city.junctions.create(junction_data)
+
+    if junction.persisted?
+      puts "Junction created successfully for the last city: #{last_city.name}"
+    else
+      puts "Error creating junction - #{junction.errors.full_messages.join(', ')}"
+    end
+  end
 else
   puts "No cities found. Please create some cities first."
 end

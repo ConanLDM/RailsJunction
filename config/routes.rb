@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "pages#home"
 
-  resources :cities do
-    resources :junctions
-  end
+  resources :cities
 
   resources :junctions
 end
