@@ -1,5 +1,5 @@
 class City < ApplicationRecord
-  has_many :junctions
+  has_many :junctions, dependent: :destroy
 
   # belongs_to :country
 
