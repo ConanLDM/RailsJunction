@@ -59,6 +59,11 @@ gem "foreman"
 # For checking existing gem versions and for vulnerabilities
 gem 'bundler-audit'
 
+gem 'bootstrap', '~> 5.3', '>= 5.3.2'
+
+# For Bootstrap
+gem "sassc-rails"
+
 group :development, :test do
   gem "ffaker"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -81,3 +86,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "cssbundling-rails", "~> 1.4"
