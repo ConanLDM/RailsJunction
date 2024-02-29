@@ -88,3 +88,5 @@ group :test do
 end
 
 gem "cssbundling-rails", "~> 1.4"
+
+gem "jsbundling-rails", "~> 1.3"
