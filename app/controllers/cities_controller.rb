@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CitiesController < ApplicationController
   def create
     @city = City.new(city_params)
