@@ -64,6 +64,8 @@ gem 'bootstrap', '~> 5.3', '>= 5.3.2'
 # For Bootstrap
 gem "sassc-rails"
 
+gem 'rubocop', require: false
+
 group :development, :test do
   gem "ffaker"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
