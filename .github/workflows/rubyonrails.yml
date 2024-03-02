@@ -28,9 +28,9 @@ jobs:
           POSTGRES_DB: myapp_test
           POSTGRES_PASSWORD: ""
         ports: ["5432:5432"]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    # steps:
+    #   - name: Checkout code
+    #     uses: actions/checkout@v4
 
   linters:
     name: Linters
@@ -38,7 +38,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Setup Ruby and install gems
         uses: ruby/setup-ruby@v1
         with:
