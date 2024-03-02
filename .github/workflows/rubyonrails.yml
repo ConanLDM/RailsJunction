@@ -1,43 +1,35 @@
-name: "Ruby on Rails CI"
+name: Ruby on Rails CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   bundler-audit:
     name: Bundler Audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Ruby and install gems
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: bundler-audit
+      - name: Run Bundler Audit
+        run: bundler-audit
+
   test:
+    name: Tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
         ruby-version: [3.3, 3.2, 3.1, 3.0, 2.7, 2.6, 2.5, 2.4, 2.3]
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Ruby ${{ matrix.ruby-version }}
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: ${{ matrix.ruby-version }}
-          bundler-cache: true
-      - name: Run rake task
-        run: bundle exec rake
-  tests:
-    name: Tests
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:12.7
-        env:
-          POSTGRES_USER: myapp
-          POSTGRES_DB: myapp_test
-          POSTGRES_PASSWORD: ""
-        ports: ["5432:5432"]
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Runs test suite
+        run: rails test
 
   linters:
     name: Linters
@@ -45,7 +37,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup Ruby and install gems
+      - name: Set up Ruby and install gems
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
