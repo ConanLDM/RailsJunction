@@ -26,6 +26,13 @@ jobs:
         - 6379:6379
         options: --entrypoint redis-server
 
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.3.x
+
   bundler-audit:
     name: Bundler Audit
     runs-on: ubuntu-latest
