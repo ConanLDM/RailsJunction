@@ -1,6 +1,9 @@
 name: "Ruby on Rails CI"
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   tests:
@@ -14,6 +17,10 @@ jobs:
           POSTGRES_DB: myapp_test
           POSTGRES_PASSWORD: ""
         ports: ["5432:5432"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
   linters:
     name: Linters
     runs-on: ubuntu-latest
@@ -25,5 +32,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
       - name: Run RuboCop
         run: bundle exec rubocop
