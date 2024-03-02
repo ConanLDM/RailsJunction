@@ -67,7 +67,7 @@ gem 'rubocop', require: false
 
 group :development, :test do
   gem 'ffaker'
-  gem 'rubocop'
+  gem 'rubocop' # rubocop:todo Bundler/DuplicatedGem
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
 end
