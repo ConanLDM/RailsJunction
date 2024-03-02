@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class JunctionsController < ApplicationController
   def create
     @junction = Junction.new(junction_params)
