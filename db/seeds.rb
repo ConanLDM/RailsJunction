@@ -15,8 +15,8 @@ User.destroy_all
 Junction.destroy_all
 
 User.create!(
-  name: "John Smith",
-  email: "john.smith@example.com"
+  name: 'John Smith',
+  email: 'john.smith@example.com'
 )
 
 10.times do |i|
@@ -33,12 +33,12 @@ last_city = City.last
 if last_city
   junctions_data = [
     { name: 'Central Square', location: 'Downtown' },
-    { name: "Spaghetti Junction", location: "Birmingham" },
-    { name: "Shibuya Crossing", location: "Tokyo" },
-    { name: "Arc de Triomphe Roundabout", location: "Paris" },
-    { name: "Magic Roundabout", location: "Swindon" },
-    { name: "Times Square Intersection", location: "New York location" },
-    { name: "Akihabara Crossing", location: "Tokyo" }
+    { name: 'Spaghetti Junction', location: 'Birmingham' },
+    { name: 'Shibuya Crossing', location: 'Tokyo' },
+    { name: 'Arc de Triomphe Roundabout', location: 'Paris' },
+    { name: 'Magic Roundabout', location: 'Swindon' },
+    { name: 'Times Square Intersection', location: 'New York location' },
+    { name: 'Akihabara Crossing', location: 'Tokyo' }
   ]
 
   junctions_data.each do |junction_data|
@@ -51,5 +51,5 @@ if last_city
     end
   end
 else
-  puts "No cities found. Please create some cities first."
+  puts 'No cities found. Please create some cities first.'
 end
