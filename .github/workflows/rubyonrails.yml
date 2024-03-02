@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Set up Ruby
-        uses: ruby/setup-ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.3.x
 
@@ -44,7 +44,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Ruby and install gems
-        uses: ruby/setup-ruby
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Security audit dependencies
@@ -69,7 +69,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Ruby and install gems
-        uses: ruby/setup-ruby
+        uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - name: Run RuboCop
