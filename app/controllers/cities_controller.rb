@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CitiesController < ApplicationController
+class CitiesController < ApplicationController # rubocop:todo Style/Documentation
   def create
     @city = City.new(city_params)
   end

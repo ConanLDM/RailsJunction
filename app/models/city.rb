@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class City < ApplicationRecord
+class City < ApplicationRecord # rubocop:todo Style/Documentation
   has_many :junctions, dependent: :destroy
 
   # belongs_to :country

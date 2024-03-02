@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class JunctionsController < ApplicationController
+class JunctionsController < ApplicationController # rubocop:todo Style/Documentation
   def create
     @junction = Junction.new(junction_params)
 
