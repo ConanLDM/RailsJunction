@@ -63,7 +63,8 @@ gem 'bootstrap', '~> 5.3', '>= 5.3.2'
 # For Bootstrap
 gem 'sassc-rails'
 
-gem 'rubocop', require: false
+# For Creating Sections (Initially Junctions and Cities) and Users in the Future
+gem "simple_form"
 
 group :development, :test do
   gem 'ffaker'
