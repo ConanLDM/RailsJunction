@@ -1,6 +1,13 @@
-<h2>Junctions:</h2>
+<h1>Junctions:</h1>
+<p>Discover the various junctions in our city:</p>
 <ul>
   <% @junctions.each do |junction| %>
-    <li><%= junction.name %> (Located in: <%= junction.location %>)</li>
+     <li>
+      <strong>Junction Name:</strong> <%= junction.name || 'Junction will appear soon...' %><br>
+      <strong>Location:</strong> <%= junction.location %><br>
+      <strong>City:</strong> <%= junction.city.name %>
+    </li>
   <% end %>
 </ul>
+
+<%= link_to "New Junction", new_junction_path %>
