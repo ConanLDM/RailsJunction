@@ -1,12 +1,13 @@
 <%= simple_form_for @junction do |f| %>
   <div class="mb-3">
-    <%= f.label :location, class: "form-label" %>
-    <%= f.text_field :junction, class: "form-control", placeholder: "Enter a Junction" %>
-    <%= f.text_field :location, class: "form-control", placeholder: "Junction Location" %>
-
+    <%= f.label :junction, class: "form-label" %>
+    <%= f.text_field :junction.name, class: "form-control", placeholder: "Enter a Junction Name" %>
+    <%= f.input :location, class: "form-control", placeholder: "Junction Location" %>
   </div>
 
   <%= f.association :city, label_method: :name, value_method: :id, prompt: "Select a city", class: "form-select" %>
 
   <%= f.submit "Create", class: "btn btn-primary" %>
 <% end %>
+
+<% link_to "Home", root_path %>
