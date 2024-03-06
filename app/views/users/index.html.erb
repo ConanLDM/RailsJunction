@@ -1,0 +1,10 @@
+<h1>Index for Users</h1>
+
+<%= link_to 'New User', new_user_path %>
+
+<div class="users list">
+  <% @users.each do |user| %>
+    <p><%= user.id %></p>
+    <p><%= user.name %></p>
+  <% end %>
+</div>

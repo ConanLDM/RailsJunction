@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :cities
 
   resources :junctions
+
+  resources :users, only: [:index, :new, :create]
 end
