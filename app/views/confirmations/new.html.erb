@@ -1,0 +1,6 @@
+<%= simple_form_for @user, url: confirmations_path do |form| %>
+  <div>
+    <%= form.input :email, required: true, label: "Email" %>
+  </div>
+  <%= form.button :submit, "Confirm Email" %>
+<% end %>

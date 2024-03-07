@@ -2,6 +2,7 @@
 
 require 'sidekiq/web'
 Rails.application.routes.draw do
+  get 'static_pages/home'
   mount Sidekiq::Web => '/sidekiq'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -17,4 +18,9 @@ Rails.application.routes.draw do
   resources :junctions
 
   resources :users, only: [:index, :new, :create]
+
+  post "sign_up", to: "users#create"
+  get "sign_up", to: "users#new"
+
+  resources :confirmations, only: [:create, :edit, :new], param: :confirmation_token
 end
