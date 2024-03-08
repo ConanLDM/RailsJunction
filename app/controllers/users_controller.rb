@@ -18,6 +18,7 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
     redirect_to @user
 
     if @user.save
+      @user.send_confirmation_email!
       flash[:notice] = "User created successfully"
       redirect_to users_path, status: :unprocessable_entity
     else
@@ -28,6 +29,6 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

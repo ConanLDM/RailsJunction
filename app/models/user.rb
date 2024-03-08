@@ -9,6 +9,8 @@ class User < ApplicationRecord # rubocop:todo Style/Documentation
   validates :name, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
 
+  MAILER_FROM_EMAIL = "no-reply@example.com"
+
   def confirm!
     update_columns(confirmed_at: Time.current)
   end
@@ -19,6 +21,11 @@ class User < ApplicationRecord # rubocop:todo Style/Documentation
 
   def generate_confirmation_token
     signed_id expires_in: CONFIRMATION_TOKEN_EXPIRATION, purpose: :confirm_email
+  end
+
+  def send_confirmation_email!
+    confirmation_token = generate_confirmation_token
+    UserMailer.confirmation(self, confirmation_token).deliver_now
   end
 
   def unconfirmed?
