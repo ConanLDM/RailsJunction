@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController # rubocop:todo Style/Documentation
+  before_action :redirect_if_authenticated, only: [:create, :new]
+  
   def index
     @users = User.all
   end
