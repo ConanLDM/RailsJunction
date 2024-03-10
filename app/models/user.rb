@@ -5,6 +5,8 @@ class User < ApplicationRecord # rubocop:todo Style/Documentation
 
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes
 
+  PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes
+
   has_secure_password
   validates :name, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
@@ -30,6 +32,15 @@ class User < ApplicationRecord # rubocop:todo Style/Documentation
 
   def unconfirmed?
     !confirmed?
+  end
+
+  def generate_password_reset_token
+    signed_id expires_in: PASSWORD_RESET_TOKEN_EXPIRATION, purpose: :reset_password
+  end
+  ...
+  def send_password_reset_email!
+    password_reset_token = generate_password_reset_token
+    UserMailer.password_reset(self, password_reset_token).deliver_now
   end
 
   private
