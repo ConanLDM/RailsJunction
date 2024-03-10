@@ -10,4 +10,11 @@ class UserMailer < ApplicationMailer # rubocop:todo Style/Documentation
 
     mail(to: @user.email, subject: 'Welcome to Rails Junction')
   end
+
+  def password_reset(user, password_reset_token)
+    @user = user
+    @password_reset_token = password_reset_token
+
+    mail to: @user.email, subject: "How to reset your Password"
+  end
 end
