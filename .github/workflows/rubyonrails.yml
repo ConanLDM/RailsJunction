@@ -60,7 +60,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Runs test suite
-        run: rails test
+        run: bundle exec rails test
 
   linters:
     name: Linters
