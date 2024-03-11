@@ -59,3 +59,6 @@ init.sql
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Dealing with the Yarn errors locally
+yarn-error.log
