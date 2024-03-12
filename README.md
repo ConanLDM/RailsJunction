@@ -1,10 +1,7 @@
 # RailsJunction
 
-## No set application intention as of now, will come together over the next few weeks (16/02/2024)
+## Open plan application currently based around junctions (as the name suggests), locations and cities.
 
-### Using GitHub Actions to assess the application against workflow jobs per each push into the repository.
+### Using GitHub Actions to assess the application against workflow jobs per each push into the repository. Build and bundler-audit jobs passing, working on passing matrix for different Ruby versions.
 
 #### Rails 7.1 application, using Sidekiq and Redis.
-
-##### MVC being setup for junctions, as of 24/02/2024 junction model and dB schema for it have been created (open ended
-##### as to how in tune and serious or humorous with invoking real world junctions this will be).
