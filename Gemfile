@@ -66,6 +66,16 @@ gem 'sassc-rails'
 # For Creating Sections (Initially Junctions and Cities) and Users in the Future
 gem "simple_form"
 
+# To tackle potentially tricky migrations that may come to fruition due to additional
+# models, new columns, references etc. to be introduced
+gem "strong_migrations"
+
+# JavaScript/Ruby charts for junctions and cities
+gem "chartkick"
+
+# To group and view by day, week, specific day hour etc. 
+gem "groupdate"
+
 group :development, :test do
   gem 'ffaker'
   gem 'rubocop' # rubocop:todo Bundler/DuplicatedGem
