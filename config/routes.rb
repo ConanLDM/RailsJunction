@@ -2,6 +2,7 @@
 
 require 'sidekiq/web'
 Rails.application.routes.draw do
+  get 'crossroads/show'
   get 'static_pages/home'
   mount Sidekiq::Web => '/sidekiq'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create]
 
+  get '/crossroads', to: "crossroads#show"
   post "sign_up", to: "users#create"
   get "sign_up", to: "users#new"
 
