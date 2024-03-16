@@ -1,0 +1,6 @@
+<%= form_with(model: @crossroad, url: crossroads_roads_path, format: :turbo_stream) do |form| %>
+  <%= form.label :message, "Your Crossroad" %>
+  <%= form.text_area :message, autofocus: true %>
+  <%= form.button "Close", type: :button, data: { action: "click->remote-modal#close" } %>
+  <%= form.button "Send" %>
+<% end %>

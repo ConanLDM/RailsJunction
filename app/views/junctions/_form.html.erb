@@ -1,0 +1,30 @@
+<%= simple_form_for @junction do |f| %>
+  <% if @junction.errors.any? %>
+    <div style="color: blue">
+      <h2><%= pluralize(@junction.errors.count, "error") %> prohibited this new junction from being saved:</h2>
+
+      <ul>
+        <% @junction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :junction, style: "display: block" %>
+  </div>
+
+  <div>
+    <%= f.label :name, style: "display: block" %>
+  </div>
+
+  <div>
+    <%= f.association :city, label_method: :name, value_method: :id, prompt: "Select a city", class: "form-select" %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+<h1>Testing</h1>

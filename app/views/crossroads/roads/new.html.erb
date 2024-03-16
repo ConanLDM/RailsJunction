@@ -1,0 +1,14 @@
+<%= turbo_stream.show_remote_modal do %>
+  <dialog id="crossroad_form_modal" aria-labelledby="modal_title" data-controller="remote-modal">
+    <header>
+      <h2 id="modal_title">Upload a Crossroad</h2>
+      <button aria-label="close" data-action="click->remote-modal#close">&times;</button>
+    </header>
+    <%= form_with(model: @crossroad, url: crossroads_roads_path, format: :turbo_stream) do |form| %>
+      <%= form.label :message, "Your Crossroad" %>
+      <%= form.text_area :message, autofocus: true %>
+      <%= form.button "Close", type: :button, data: { action: "click->remote-modal#close" } %>
+      <%= form.button "Send" %>
+    <% end %>
+  </dialog>
+<% end %>

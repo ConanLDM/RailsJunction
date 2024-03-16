@@ -1,13 +1,15 @@
 <h1>Junctions:</h1>
 <p>Discover the various junctions in our city:</p>
-<ul>
-  <% @junctions.each do |junction| %>
-     <li>
-      <strong>Junction Name:</strong> <%= junction.name || 'Junction will appear soon...' %><br>
-      <strong>Location:</strong> <%= junction.location %><br>
-      <strong>City:</strong> <%= junction.city.name %>
-    </li>
-  <% end %>
-</ul>
+<div id="junctions">
+  <ul>
+    <% @junctions.each do |junction| %>
+      <li>
+        <strong>Junction Name:</strong> <%= junction.name || 'Junction will appear soon...' %><br>
+        <strong>Location:</strong> <%= junction.location %><br>
+        <strong>City:</strong> <%= junction.city.name %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-<%= link_to "New Junction", new_junction_path %>
+<%= link_to 'New Junction', new_junction_path, data: { turbo_frame: "modal" } %>
