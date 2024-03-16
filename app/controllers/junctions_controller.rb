@@ -9,12 +9,14 @@ class JunctionsController < ApplicationController # rubocop:todo Style/Documenta
   def create
     @junction = Junction.new(junction_params)
 
-    @junction.city_id = params[:junction][:city_id]
-
     if @junction.save
-      redirect_to junctions_path, notice: 'Junction was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to junctions_path, notice: 'Junction was successfully created.' }
+        format.json { render :show, status: :created, location: @junction }
+      end
     else
-      render :new
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: @junction.errors, status: :unprocessable_entity }
     end
   end
 

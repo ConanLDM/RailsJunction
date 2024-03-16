@@ -1,0 +1,2 @@
+module Crossroads::RoadsHelper
+end

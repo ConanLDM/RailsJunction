@@ -1,11 +1,14 @@
 <button
   data-controller="modal"
-  data-action="modal#show"
-  data-modal-dialog-param="crossroad_modal">
+  data-modal-dialog-param="crossroad_details_modal">
   Show Crossroad
 </button>
 
-<dialog id="crossroad_modal" aria-labelledby="modal_title">
+<%= link_to new_crossroads_road_path, data: { turbo_stream: true } do %>
+  Show Crossroads Panel
+<% end %>
+
+<dialog id="crossroads_modal" aria-labelledby="modal_title">
   <header>
     <h2 id="modal_title">
       Crossroad
