@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_16_213824) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_17_121123) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_16_213824) do
     t.string "email"
     t.string "password_digest"
     t.string "password_confirmation"
+    t.string "unconfirmed_email"
   end
 
   add_foreign_key "junctions", "cities"
