@@ -4,7 +4,8 @@
   <ul>
     <% @junctions.each do |junction| %>
       <li>
-        <strong>Junction Name:</strong> <%= junction.name || 'Junction will appear soon...' %><br>
+        <strong>Junction Name:</strong>
+        <%= link_to junction.name || 'Junction will appear soon...', junction_path(junction) %><br>
         <strong>Location:</strong> <%= junction.location %><br>
         <strong>City:</strong> <%= junction.city.name %>
       </li>

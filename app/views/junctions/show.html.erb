@@ -1,0 +1,10 @@
+<h1>Junction Details:</h1>
+<p>Explore the details of this junction:</p>
+
+<div id="junction-details">
+  <strong>Junction Name:</strong> <%= @junction.name %><br>
+  <strong>Location:</strong> <%= @junction.location %><br>
+  <strong>City:</strong> <%= @junction.city.name %>
+</div>
+
+<%= link_to 'New Junction', new_junction_path %>
