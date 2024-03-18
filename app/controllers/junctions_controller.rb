@@ -20,6 +20,11 @@ class JunctionsController < ApplicationController # rubocop:todo Style/Documenta
     end
   end
 
+  def show
+    @junction = Junction.find(params[:id])
+    @posts = @junction.posts
+  end
+
   def index
     @junctions = Junction.all
   end
