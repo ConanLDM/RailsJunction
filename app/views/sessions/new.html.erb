@@ -1,5 +1,9 @@
 <%= simple_form_for :user, url: login_path do |form| %>
   <%= form.input :email, required: true, label: "Email" %>
   <%= form.input :password, required: true, label: "Password" %>
+  <div>
+    <%= form.label :remember_me %>
+    <%= form.check_box :remember_me %>
+  </div>
   <%= form.button :submit, "Sign In" %>
 <% end %>

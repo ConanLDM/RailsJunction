@@ -11,6 +11,7 @@ class User < ApplicationRecord # rubocop:todo Style/Documentation
   PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes
 
   has_secure_password
+  has_secure_token :remember_token
   validates :name, presence: true, uniqueness: true
   validates :unconfirmed_email, format: { with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
 

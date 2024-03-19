@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_17_121123) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_19_193858) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_17_121123) do
     t.string "password_digest"
     t.string "password_confirmation"
     t.string "unconfirmed_email"
+    t.string "remember_token", null: false
+    t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
   end
 
   add_foreign_key "junctions", "cities"
