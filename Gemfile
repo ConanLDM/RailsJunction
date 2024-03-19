@@ -73,7 +73,7 @@ gem "strong_migrations"
 # JavaScript/Ruby charts for junctions and cities
 gem "chartkick"
 
-# To group and view by day, week, specific day hour etc. 
+# To group and view by day, week, specific day hour etc.
 gem "groupdate"
 
 group :development, :test do
