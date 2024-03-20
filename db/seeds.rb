@@ -43,15 +43,23 @@ if last_city
     { name: 'Akihabara Crossing', location: 'Tokyo' }
   ]
 
+
   junctions_data.each do |junction_data|
     junction = last_city.junctions.create(junction_data)
 
     if junction.persisted?
       puts "Junction created successfully for the last city: #{last_city.name}"
+    # puts "Latitude: #{junction.latitude}, Longitude: #{junction.longitude}"
     else
       puts "Error creating junction - #{junction.errors.full_messages.join(', ')}"
     end
   end
 else
   puts 'No cities found. Please create some cities first.'
+end
+
+if junction.geocoding_error.present?
+  puts "Geocoding Error: #{junction.geocoding_error}"
+else
+  puts "Geocoding Successful!"
 end
