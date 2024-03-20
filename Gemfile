@@ -76,6 +76,9 @@ gem "chartkick"
 # To group and view by day, week, specific day hour etc.
 gem "groupdate"
 
+# For locating information and coordinates for junctions, cities etc.
+gem "geocoder"
+
 group :development, :test do
   gem 'ffaker'
   gem 'rubocop' # rubocop:todo Bundler/DuplicatedGem
