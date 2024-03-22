@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    @junction = Post.new(post_params)
     @post.junction_id = @junction.id
 
     respond_to do |format|
