@@ -16,7 +16,7 @@ City.destroy_all
 User.destroy_all
 Junction.destroy_all
 
-User.create!(
+User.create(
   name: 'John Smith',
   email: 'john.smith@example.com'
 )
@@ -58,8 +58,8 @@ else
   puts 'No cities found. Please create some cities first.'
 end
 
-if junction.geocoding_error.present?
-  puts "Geocoding Error: #{junction.geocoding_error}"
-else
-  puts "Geocoding Successful!"
-end
+# if junction.geocoding_error.present?
+#   puts "Geocoding Error: #{junction.geocoding_error}"
+# else
+#   puts "Geocoding Successful!"
+# end
