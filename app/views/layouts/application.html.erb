@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <%= turbo_frame_tag "modal" %>
-    <%= yield %>
+    <%= render 'shared/header' %>
+    <div class="container">
+      <%= turbo_frame_tag "modal" %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>
