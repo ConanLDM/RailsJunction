@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UserInsertionWorker # rubocop:todo Style/Documentation
+class UserInsertionJob # rubocop:todo Style/Documentation
   include Sidekiq::Worker
 
   def perform(users)
