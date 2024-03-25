@@ -3,6 +3,11 @@
 class UsersController < ApplicationController # rubocop:todo Style/Documentation
   before_action :authenticate_user!, only: [:edit, :destroy, :update]
 
+  def show
+    @user = User.find(params[:id])
+    debugger
+  end
+
   def index
     @users = User.all
   end

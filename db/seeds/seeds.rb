@@ -18,7 +18,9 @@ Junction.destroy_all
 
 User.create(
   name: 'John Smith',
-  email: 'john.smith@example.com'
+  email: 'john.smith@example.com',
+  password: 'seeding',
+  password_confirmation: 'seeding'
 )
 
 10.times do |i|

@@ -62,3 +62,7 @@ init.sql
 
 # Dealing with the Yarn errors locally
 yarn-error.log
+
+# Ignore non relevant files
+
+.git-old/
