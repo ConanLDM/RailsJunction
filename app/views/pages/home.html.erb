@@ -13,3 +13,5 @@
 <%= line_chart User.group_by_day(:created_at).count %>
 
 <%= link_to "User Sign In", users_path %>
+
+<%= render partial: 'pages/modal' %>
