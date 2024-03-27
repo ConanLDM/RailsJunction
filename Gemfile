@@ -79,6 +79,8 @@ gem "groupdate"
 # For locating information and coordinates for junctions, cities etc.
 gem "geocoder"
 
+gem "phlex-rails"
+
 group :development, :test do
   gem 'ffaker'
   gem 'rubocop' # rubocop:todo Bundler/DuplicatedGem

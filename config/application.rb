@@ -12,6 +12,9 @@ Bundler.require(*Rails.groups)
 
 module RailsJunction
   class Application < Rails::Application # rubocop:todo Style/Documentation
+    config.autoload_paths << "#{root}/app/views"
+    config.autoload_paths << "#{root}/app/views/layouts"
+    config.autoload_paths << "#{root}/app/views/components"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
     config.active_job.queue_adapter = :sidekiq#
