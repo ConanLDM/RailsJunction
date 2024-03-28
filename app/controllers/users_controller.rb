@@ -5,7 +5,6 @@ class UsersController < ApplicationController # rubocop:todo Style/Documentation
 
   def show
     @user = User.find(params[:id])
-    debugger
   end
 
   def index
